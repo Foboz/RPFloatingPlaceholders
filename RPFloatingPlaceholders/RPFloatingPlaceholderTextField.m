@@ -217,7 +217,7 @@
     if (self.shouldDrawPlaceholder) {
         UIColor *placeholderGray = self.defaultPlaceholderColor ?: [UIColor colorWithRed:199/255.f green:199/255.f blue:205/255.f alpha:1.f];
         // Inset the placeholder by the same 5px on both sides so that it works in right-to-left languages too
-        CGRect placeholderFrame = CGRectMake(5.f, floorf((self.frame.size.height - self.font.lineHeight) / 2.f), self.frame.size.width - 10, self.frame.size.height);
+        CGRect placeholderFrame = CGRectMake(0.f, floorf((self.frame.size.height - self.font.lineHeight) / 2.f), self.frame.size.width, self.frame.size.height);
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
         [paragraphStyle setAlignment: self.textAlignment];
         
@@ -310,7 +310,7 @@
     [self.floatingLabel sizeToFit];
     
     self.originalFloatingLabelFrame = CGRectMake(self.originalTextFieldFrame.origin.x, self.originalTextFieldFrame.origin.y,
-                                                 self.originalTextFieldFrame.size.width - 10.f, self.floatingLabel.frame.size.height);
+                                                 self.originalTextFieldFrame.size.width, self.floatingLabel.frame.size.height);
     
     self.offsetFloatingLabelFrame = CGRectMake(self.originalFloatingLabelFrame.origin.x, self.originalFloatingLabelFrame.origin.y - self.yOffset,
                                                self.originalFloatingLabelFrame.size.width, self.originalFloatingLabelFrame.size.height);
