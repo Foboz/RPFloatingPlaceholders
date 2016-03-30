@@ -98,6 +98,18 @@
     [self textFieldTextDidChange:nil];
 }
 
+- (void)setFrame:(CGRect)frame
+{
+  [super setFrame:frame];
+  [self adjustFramesForNewPlaceholder];
+}
+
+- (void)setBounds:(CGRect)bounds
+{
+  [super setBounds:bounds];
+  [self adjustFramesForNewPlaceholder];
+}
+
 - (void)setTextAlignment:(NSTextAlignment)textAlignment
 {
     [super setTextAlignment: textAlignment];
