@@ -98,20 +98,6 @@
     [self textFieldTextDidChange:nil];
 }
 
-- (void)setFrame:(CGRect)frame
-{
-  [super setFrame:frame];
-  self.originalTextFieldFrame = self.frame;
-  [self adjustFramesForNewPlaceholder];
-}
-
-- (void)setBounds:(CGRect)bounds
-{
-  [super setBounds:bounds];
-  self.originalTextFieldFrame = self.frame;
-  [self adjustFramesForNewPlaceholder];
-}
-
 - (void)setTextAlignment:(NSTextAlignment)textAlignment
 {
     [super setTextAlignment: textAlignment];
@@ -265,6 +251,11 @@
 
 - (void)showFloatingLabelWithAnimation:(BOOL)isAnimated
 {
+    if (!CGRectEqualToRect(self.frame, self.originalTextFieldFrame)) {
+        self.originalTextFieldFrame = self.frame;
+        [self adjustFramesForNewPlaceholder];
+        self.floatingLabel.frame = self.originalFloatingLabelFrame;
+    }
     // Add it to the superview
     if (self.floatingLabel.superview != self.superview) {
         [self.superview addSubview:self.floatingLabel];
