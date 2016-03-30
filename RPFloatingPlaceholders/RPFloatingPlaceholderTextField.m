@@ -172,7 +172,7 @@
     
     // Adjust the top margin of the text field and then cache the original
     // view frame
-    self.originalTextFieldFrame = UIEdgeInsetsInsetRect(self.frame, UIEdgeInsetsMake(5.f, 0.f, 2.f, 0.f));
+    self.originalTextFieldFrame = self.frame;//  UIEdgeInsetsInsetRect(self.frame, UIEdgeInsetsMake(5.f, 0.f, 2.f, 0.f));
     self.frame = self.originalTextFieldFrame;
     
     // Set the background to a clear color
@@ -309,7 +309,7 @@
 {
     [self.floatingLabel sizeToFit];
     
-    self.originalFloatingLabelFrame = CGRectMake(self.originalTextFieldFrame.origin.x + 5.f, self.originalTextFieldFrame.origin.y,
+    self.originalFloatingLabelFrame = CGRectMake(self.originalTextFieldFrame.origin.x, self.originalTextFieldFrame.origin.y,
                                                  self.originalTextFieldFrame.size.width - 10.f, self.floatingLabel.frame.size.height);
     
     self.offsetFloatingLabelFrame = CGRectMake(self.originalFloatingLabelFrame.origin.x, self.originalFloatingLabelFrame.origin.y - self.yOffset,
@@ -320,16 +320,16 @@
 }
 
 // Adds padding so these text fields align with RPFloatingPlaceholderTextView's
-- (CGRect)textRectForBounds:(CGRect)bounds
-{
-    return [super textRectForBounds:UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0.f, 5.f, 0.f, 5.f))];
-}
+//- (CGRect)textRectForBounds:(CGRect)bounds
+//{
+//    return [super textRectForBounds:UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0.f, 5.f, 0.f, 5.f))];
+//}
 
 // Adds padding so these text fields align with RPFloatingPlaceholderTextView's
-- (CGRect)editingRectForBounds:(CGRect)bounds
-{
-    return [super editingRectForBounds:UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0.f, 5.f, 0.f, 5.f))];
-}
+//- (CGRect)editingRectForBounds:(CGRect)bounds
+//{
+//    return [super editingRectForBounds:UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0.f, 5.f, 0.f, 5.f))];
+//}
 
 - (void)animateFloatingLabelColorChangeWithAnimationBlock:(void (^)(void))animationBlock
 {
