@@ -54,4 +54,9 @@
  */
 @property (nonatomic) CGFloat yOffset;
 
+/**
+ @discussion Note: Custom font for floating label
+ */
+@property (nonatomic, strong) UIFont *floatingLabelFont;
+
 @end

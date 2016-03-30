@@ -121,6 +121,12 @@
     [self setNeedsDisplay];
 }
 
+- (void)setFloatingLabelFont:(UIFont *)floatingLabelFont
+{
+  _floatingLabelFont = floatingLabelFont;
+  self.floatingLabel.font = floatingLabelFont;
+}
+
 - (void)setFloatingLabelActiveTextColor:(UIColor *)floatingLabelActiveTextColor
 {
     _floatingLabelActiveTextColor = floatingLabelActiveTextColor;
@@ -153,7 +159,7 @@
     
     // Create the floating label instance and add it to the view
     self.floatingLabel = [[UILabel alloc] init];
-    self.floatingLabel.font = [UIFont boldSystemFontOfSize:11.f];
+    self.floatingLabel.font = self.floatingLabelFont ?: [UIFont boldSystemFontOfSize:11.f];
     self.floatingLabel.textAlignment = self.textAlignment;
     self.floatingLabel.backgroundColor = [UIColor clearColor];
     self.floatingLabel.alpha = 1.f;
