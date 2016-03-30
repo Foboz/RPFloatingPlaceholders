@@ -127,6 +127,12 @@
   self.floatingLabel.font = floatingLabelFont;
 }
 
+- (void)setYOffset:(CGFloat)yOffset
+{
+  _yOffset = yOffset;
+  [self adjustFramesForNewPlaceholder];
+}
+
 - (void)setFloatingLabelActiveTextColor:(UIColor *)floatingLabelActiveTextColor
 {
     _floatingLabelActiveTextColor = floatingLabelActiveTextColor;
