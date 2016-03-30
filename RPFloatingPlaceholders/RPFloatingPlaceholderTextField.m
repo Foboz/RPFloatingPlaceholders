@@ -101,12 +101,14 @@
 - (void)setFrame:(CGRect)frame
 {
   [super setFrame:frame];
+  self.originalTextFieldFrame = self.frame;
   [self adjustFramesForNewPlaceholder];
 }
 
 - (void)setBounds:(CGRect)bounds
 {
   [super setBounds:bounds];
+  self.originalTextFieldFrame = self.frame;
   [self adjustFramesForNewPlaceholder];
 }
 
