@@ -242,7 +242,7 @@
 {
     if (self.floatingLabel.superview != self.superview) {
         if (self.superview && self.hasText) {
-            [self.superview addSubview:self.floatingLabel];
+            [self.superview insertSubview:self.floatingLabel aboveSubview:self];
         } else {
             [self.floatingLabel removeFromSuperview];
         }
@@ -258,7 +258,7 @@
     }
     // Add it to the superview
     if (self.floatingLabel.superview != self.superview) {
-        [self.superview addSubview:self.floatingLabel];
+        [self.superview insertSubview:self.floatingLabel aboveSubview:self];
     }
     
     // Flags the view to redraw
